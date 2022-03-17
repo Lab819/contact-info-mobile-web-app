@@ -12,7 +12,7 @@ function initialize() {
             }
         }
     }
-    
+
     document.getElementById("status").innerHTML = status;
 
     document.body.addEventListener(
@@ -36,8 +36,8 @@ function retrieveContacts() {
     const url = "contacts.json";
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) { 
-            var contacts = JSON.parse(xhr.response).contacts; 
+        if (xhr.readyState === 4) {
+            var contacts = JSON.parse(xhr.response).contacts;
             displayContacts(contacts);
 
             // Store contact data to localstorage
