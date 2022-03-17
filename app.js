@@ -37,7 +37,6 @@ function retrieveContacts() {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) { 
-            //assign the json content to variable "contacts"
             var contacts = JSON.parse(xhr.response).contacts; 
             displayContacts(contacts);
 
