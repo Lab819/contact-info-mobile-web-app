@@ -12,9 +12,9 @@ function initialize() {
             }
         }
     }
-	//update the "status" in the table caption
+
     document.getElementById("status").innerHTML = status;
-	//keeping detect the accessing mode and change mode
+
     document.body.addEventListener(
             "online",
             function () {
@@ -38,49 +38,6 @@ function retrieveContacts() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             var contacts = JSON.parse(xhr.response).contacts;
-            displayContacts(contacts);
-
-            // Store contact data to localstorage
-function initialize() {
-    var status = "* Offline *";
-    if (navigator.onLine) {
-        status = "* Online *";
-        retrieveContacts();
-    } else {
-        const localStorage = window.localStorage;
-        if (localStorage) {
-            const contacts = localStorage.getItem("contacts");
-            if (contacts) {
-                displayContacts(JSON.parse(contacts));
-            }
-        }
-    }
-
-    document.getElementById("status").innerHTML = status;
-
-    document.body.addEventListener(
-            "online",
-            function () {
-                document.getElementById("status").innerHTML = "Online";
-            },
-            false
-            );
-    document.body.addEventListener(
-            "offline",
-            function () {
-                document.getElementById("status").innerHTML = "Offline";
-            },
-            false
-            );
-}
-
-function retrieveContacts() {
-    const xhr = new XMLHttpRequest();
-    const url = "contacts.json";
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) { //check if the file retrieval has been completed
-            var contacts = JSON.parse(xhr.response).contacts; //assign the json content to variable "contacts"
             displayContacts(contacts);
 
             // Store contact data to localstorage
