@@ -12,7 +12,7 @@ function initialize() {
             }
         }
     }
-    //update the "status" in the table caption
+    
     document.getElementById("status").innerHTML = status;
 
     document.body.addEventListener(
