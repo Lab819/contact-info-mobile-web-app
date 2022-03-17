@@ -12,7 +12,7 @@ function initialize() {
             }
         }
     }
-
+	//update the "status" in the table caption
     document.getElementById("status").innerHTML = status;
 
     document.body.addEventListener(
@@ -36,8 +36,8 @@ function retrieveContacts() {
     const url = "contacts.json";
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            var contacts = JSON.parse(xhr.response).contacts;
+        if (xhr.readyState === 4) { //check if the file retrieval has been completed
+            var contacts = JSON.parse(xhr.response).contacts; //assign the json content to variable "contacts"
             displayContacts(contacts);
 
             // Store contact data to localstorage
