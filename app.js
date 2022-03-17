@@ -36,7 +36,6 @@ function retrieveContacts() {
     const url = "contacts.json";
 
     xhr.onreadystatechange = function () {
-        //check if the file retrieval has been completed
         if (xhr.readyState === 4) { 
             //assign the json content to variable "contacts"
             var contacts = JSON.parse(xhr.response).contacts; 
