@@ -12,9 +12,7 @@ function initialize() {
             }
         }
     }
-
     document.getElementById("status").innerHTML = status;
-
     document.body.addEventListener(
             "online",
             function () {
@@ -30,7 +28,6 @@ function initialize() {
             false
             );
 }
-
 function retrieveContacts() {
     const xhr = new XMLHttpRequest();
     const url = "contacts.json";
@@ -47,27 +44,21 @@ function retrieveContacts() {
             }
         }
     };
-
     xhr.open("get", url);
     xhr.send();
 }
-
 function displayContacts(contacts) {
     contacts.forEach(addRow);
 }
-
 function addRow(contact) {
     var tcontent = document.getElementById("tcontent");
     var row = tcontent.insertRow();
-
     var nameCell = row.insertCell();
     nameCell.setAttribute('data-label', "Name");
     nameCell.innerHTML = contact.name;
-
     var addressCell = row.insertCell();
     addressCell.setAttribute('data-label', "Address");
     addressCell.innerHTML = contact.address;
-
     var emailCell = row.insertCell();
     emailCell.setAttribute('data-label', "Email");
     emailCell.innerHTML = contact.email;
