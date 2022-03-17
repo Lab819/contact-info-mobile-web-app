@@ -36,8 +36,12 @@ function retrieveContacts() {
     const url = "contacts.json";
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) { //check if the file retrieval has been completed
-            var contacts = JSON.parse(xhr.response).contacts; //assign the json content to variable "contacts"
+        
+        //check if the file retrieval has been completed
+        if (xhr.readyState === 4) { 
+            
+            //assign the json content to variable "contacts"
+            var contacts = JSON.parse(xhr.response).contacts; 
             displayContacts(contacts);
 
             // Store contact data to localstorage
